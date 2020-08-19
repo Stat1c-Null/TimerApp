@@ -70,36 +70,40 @@ class _TimerAppState extends State<TimerApp> {
               ],
             ),
             SizedBox(height: 60),
-            Container(// Create a Start Stop Button
-              width: 80,
-              height: 47,
-              margin: EdgeInsets.only(top: 30),
-              child: RaisedButton(
-                color: Colors.purpleAccent[400],
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                child: Text(active ? 'Stop' : 'Start'), // If timer is off, button will show start, otherwise stop
-                onPressed: (){
-                  setState(() {
-                    active = !active; // On Press, change Active variable from False to True and otherwise
-                  });
-                },
-              ),
-            ),
-            Container(// Create a Reset Button
-              width: 80,
-              height: 47,
-              margin: EdgeInsets.only(top: 10),
-              child: RaisedButton(
-                color: Colors.purpleAccent[400],
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                child: Text("Reset"),
-                onPressed: (){
-                  setState(() {
-                    active = false;
-                    seconds_passed = 0;
-                  });
-                },
-              ),
+            Row(mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(// Create a Start Stop Button
+                  width: 80,
+                  height: 47,
+                  margin: EdgeInsets.only(top: 30),
+                  child: RaisedButton(
+                    color: Colors.purpleAccent[400],
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                    child: Text(active ? 'Stop' : 'Start'), // If timer is off, button will show start, otherwise stop
+                    onPressed: (){
+                      setState(() {
+                        active = !active; // On Press, change Active variable from False to True and otherwise
+                      });
+                    },
+                  ),
+                ),
+                Container(// Create a Reset Button
+                  width: 80,
+                  height: 47,
+                  margin: EdgeInsets.only(top: 30, left: 10),
+                  child: RaisedButton(
+                    color: Colors.purpleAccent[400],
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                    child: Text("Reset"),
+                    onPressed: (){
+                      setState(() {
+                        active = false;
+                        seconds_passed = 0;
+                      });
+                    },
+                  ),
+                ),
+              ],
             ),
           ],
         ),
