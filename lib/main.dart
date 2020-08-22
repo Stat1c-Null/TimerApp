@@ -39,7 +39,7 @@ class _TimerAppState extends State<TimerApp> {
     }
     //Convert seconds into minutes and minutes into hours
     int seconds = seconds_passed % 60;
-    int minutes = seconds_passed ~/ 60;
+    int minutes = (seconds_passed ~/ 60) % 60;
     int hours = seconds_passed ~/ (60*60);
 
     return MaterialApp(
